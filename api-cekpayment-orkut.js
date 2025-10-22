@@ -4,8 +4,8 @@ const qs = require('qs');
 // Function agar tetap kompatibel dengan app.js
 function buildPayload() {
   return qs.stringify({
-    'username': 'kangnaum',
-    'token': '2449343:LANp7rEhloiH0d3ImSvnX8JjMgDa5eFU',
+    'username': 'dono',
+    'token': '24492:HsjsksidjdbdhidowpwjsueJsjKOa',
     'jenis': 'masuk'
   });
 }

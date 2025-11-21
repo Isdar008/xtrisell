@@ -198,10 +198,13 @@ done < <(grep -R --line-number "^### " /etc/xray 2>/dev/null || true)
 
 echo "=== done ==="
 EOF
-
-chmod +x /usr/bin/apitrial-cleaner
+```
+# permission
+```
+chown root:root /usr/bin/apitrial-cleaner
+chmod 700 /usr/bin/apitrial-cleaner
 ```
 # Crond trial
 ```
-(crontab -l 2>/dev/null | grep -v "apitrial-cleaner" || true; echo "* * * * * /usr/bin/apitrial-cleaner") | crontab -
+( crontab -l 2>/dev/null | grep -v -F "/usr/bin/apitrial-cleaner" || true; echo "* * * * * /usr/bin/apitrial-cleaner >/dev/null 2>&1" ) | crontab -
 ```
